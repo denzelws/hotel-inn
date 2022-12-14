@@ -24,4 +24,12 @@ export const Logo = styled.h1`
 
 export const Items = styled.div``
 
-export const Button = styled.button``
+export const Button = styled.button`
+  ${({ theme }) => css`
+    margin-left: 2rem;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    color: ${theme.colors.primary};
+  `}
+`
