@@ -37,6 +37,11 @@ const GlobalStyles = createGlobalStyle`
     html {
       font-size: 62.5%;
     }
+
+    body {
+      font-size: ${theme.font.sizes.medium};
+      font-family: ${theme.font.family};
+    }
   `}
 
 `

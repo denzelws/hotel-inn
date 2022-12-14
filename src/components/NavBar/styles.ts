@@ -19,7 +19,7 @@ export const NavbarContainer = styled.div`
 `
 
 export const Logo = styled.h1`
-  font-weight: 600;
+  font-weight: 500;
 `
 
 export const Items = styled.div``
