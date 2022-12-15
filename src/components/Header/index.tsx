@@ -6,10 +6,32 @@ import {
   faPlane,
   faTaxi
 } from '@fortawesome/free-solid-svg-icons'
+import { useState } from 'react'
+
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+
 import * as S from './styles'
 
+import 'react-date-range/dist/styles.css'
+import 'react-date-range/dist/theme/default.css'
+import { format } from 'date-fns'
+
 const Header = () => {
+  const [openDate, setOpenDate] = useState(false)
+  const [date, setDate] = useState([
+    {
+      startDate: new Date(),
+      endDate: new Date(),
+      key: 'selection'
+    }
+  ])
+
+  const [openOptions, setOpenOptions] = useState(false)
+  const [options, setOptions] = useState({
+    adult: 1,
+    children: 0,
+    room: 1
+  })
   return (
     <S.Header>
       <S.HeaderContainer>
@@ -53,12 +75,48 @@ const Header = () => {
 
           <S.SearchItem>
             <FontAwesomeIcon icon={faCalendarDays} />
-            <S.Text>data</S.Text>
+            <S.Text onClick={() => setOpenDate(!openDate)}>{`${format(
+              date[0].startDate,
+              'dd/MM/yyyy'
+            )} to ${format(date[0].endDate, 'dd/MM/yyyy')}`}</S.Text>
+            {openDate && (
+              <S.DateCalendar
+                editableDateInputs={true}
+                onChange={(item) => setDate([item.selection])}
+                moveRangeOnFirstSelection={false}
+                ranges={date}
+              />
+            )}
           </S.SearchItem>
 
           <S.SearchItem>
             <FontAwesomeIcon icon={faPerson} />
-            <S.Text>2 adultos 2 crianças 1 quarto</S.Text>
+            <S.Text>{`${options.adult} adult
+            - ${options.children}
+            children
+            - ${options.room} room`}</S.Text>
+            <S.Options>
+              <S.OptionItem>
+                <S.Text>Adult</S.Text>
+                <S.OptionButtonCounter>-</S.OptionButtonCounter>
+                <S.OptionCounterNumber>1</S.OptionCounterNumber>
+                <S.OptionButtonCounter>+</S.OptionButtonCounter>
+              </S.OptionItem>
+
+              <S.OptionItem>
+                <S.Text>Children</S.Text>
+                <S.OptionButtonCounter>-</S.OptionButtonCounter>
+                <S.OptionCounterNumber>0</S.OptionCounterNumber>
+                <S.OptionButtonCounter>+</S.OptionButtonCounter>
+              </S.OptionItem>
+
+              <S.OptionItem>
+                <S.Text>Room</S.Text>
+                <S.OptionButtonCounter>-</S.OptionButtonCounter>
+                <S.OptionCounterNumber>1</S.OptionCounterNumber>
+                <S.OptionButtonCounter>+</S.OptionButtonCounter>
+              </S.OptionItem>
+            </S.Options>
           </S.SearchItem>
 
           <S.SearchItem>

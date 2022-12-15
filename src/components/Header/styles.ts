@@ -1,5 +1,12 @@
 import styled, { css } from 'styled-components'
 
+import { DateRange } from 'react-date-range'
+
+export const DateCalendar = styled(DateRange)`
+  position: absolute;
+  top: 5rem;
+`
+
 export const Header = styled.header`
   ${({ theme }) => css`
     background-color: ${theme.colors.primary};
@@ -90,3 +97,16 @@ export const Text = styled.span`
     cursor: pointer;
   `}
 `
+export const Options = styled.div`
+  position: absolute;
+  top: 5rem;
+  background-color: white;
+  color: gray;
+  border-radius: 0.5rem;
+`
+
+export const OptionItem = styled.div``
+
+export const OptionButtonCounter = styled.button``
+
+export const OptionCounterNumber = styled.button``
