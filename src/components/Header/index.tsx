@@ -16,7 +16,11 @@ import 'react-date-range/dist/styles.css'
 import 'react-date-range/dist/theme/default.css'
 import { format } from 'date-fns'
 
-const Header = () => {
+interface HeaderProps {
+  type: string
+}
+
+const Header = ({ type }: HeaderProps) => {
   const [openDate, setOpenDate] = useState(false)
   const [date, setDate] = useState([
     {
@@ -32,97 +36,154 @@ const Header = () => {
     children: 0,
     room: 1
   })
+
+  const handleOption = (name, operation) => {
+    setOptions((prev) => {
+      return {
+        ...prev,
+        [name]: operation === 'i' ? options[name] + 1 : options[name] - 1
+      }
+    })
+  }
+
   return (
     <S.Header>
       <S.HeaderContainer>
         <S.ItemsContainer>
           <S.Items>
             <FontAwesomeIcon icon={faBed} />
-            <S.Description>Stays</S.Description>
+            <S.Description>Hospedagens</S.Description>
           </S.Items>
 
           <S.Items>
             <FontAwesomeIcon icon={faPlane} />
-            <S.Description>Flights</S.Description>
+            <S.Description>Voos</S.Description>
           </S.Items>
 
           <S.Items>
             <FontAwesomeIcon icon={faCar} />
-            <S.Description>Car rentals</S.Description>
+            <S.Description>Aluguel de carros</S.Description>
           </S.Items>
 
           <S.Items>
             <FontAwesomeIcon icon={faBed} />
-            <S.Description>Attractions</S.Description>
+            <S.Description>Atrações</S.Description>
           </S.Items>
 
           <S.Items>
             <FontAwesomeIcon icon={faTaxi} />
-            <S.Description>Airport taxis</S.Description>
+            <S.Description>Táxis(aeroporto)</S.Description>
           </S.Items>
         </S.ItemsContainer>
-        <S.Title>Uma vida de descontos? Isso é genial</S.Title>
-        <S.Description>
-          Receba descontos por suas viagens - adquira imediatos descontos de até
-          20% ou mais e ganhe uma conta grátis
-        </S.Description>
-        <S.Button>Sign In/ Register</S.Button>
-        <S.HeaderSearch>
-          <S.SearchItem>
-            <FontAwesomeIcon icon={faBed} />
-            <S.Input type="text" placeholder="Para onde está indo?" />
-          </S.SearchItem>
+        {type !== 'list' && (
+          <>
+            <S.Title>Uma vida de descontos? Isso é genial</S.Title>
+            <S.Description>
+              Receba descontos por suas viagens - adquira imediatos descontos de
+              até 20% ou mais e ganhe uma conta grátis
+            </S.Description>
+            <S.Button>Login/ Registre-se</S.Button>
+            <S.HeaderSearch>
+              <S.SearchItem>
+                <FontAwesomeIcon icon={faBed} />
+                <S.Input type="text" placeholder="Para onde está indo?" />
+              </S.SearchItem>
 
-          <S.SearchItem>
-            <FontAwesomeIcon icon={faCalendarDays} />
-            <S.Text onClick={() => setOpenDate(!openDate)}>{`${format(
-              date[0].startDate,
-              'dd/MM/yyyy'
-            )} to ${format(date[0].endDate, 'dd/MM/yyyy')}`}</S.Text>
-            {openDate && (
-              <S.DateCalendar
-                editableDateInputs={true}
-                onChange={(item) => setDate([item.selection])}
-                moveRangeOnFirstSelection={false}
-                ranges={date}
-              />
-            )}
-          </S.SearchItem>
+              <S.SearchItem>
+                <FontAwesomeIcon icon={faCalendarDays} />
+                <S.Text onClick={() => setOpenDate(!openDate)}>{`${format(
+                  date[0].startDate,
+                  'dd/MM/yyyy'
+                )} até ${format(date[0].endDate, 'dd/MM/yyyy')}`}</S.Text>
+                {openDate && (
+                  <S.DateCalendar
+                    editableDateInputs={true}
+                    onChange={(item) => setDate([item.selection])}
+                    moveRangeOnFirstSelection={false}
+                    ranges={date}
+                  />
+                )}
+              </S.SearchItem>
 
-          <S.SearchItem>
-            <FontAwesomeIcon icon={faPerson} />
-            <S.Text>{`${options.adult} adult
+              <S.SearchItem>
+                <FontAwesomeIcon icon={faPerson} />
+                <S.Text
+                  onClick={() => setOpenOptions(!openOptions)}
+                >{`${options.adult} adulto
             - ${options.children}
-            children
-            - ${options.room} room`}</S.Text>
-            <S.Options>
-              <S.OptionItem>
-                <S.Text>Adult</S.Text>
-                <S.OptionButtonCounter>-</S.OptionButtonCounter>
-                <S.OptionCounterNumber>1</S.OptionCounterNumber>
-                <S.OptionButtonCounter>+</S.OptionButtonCounter>
-              </S.OptionItem>
+            criança
+            - ${options.room} quarto`}</S.Text>
+                {openOptions && (
+                  <S.Options>
+                    <S.OptionItem>
+                      <S.Text>Adulto</S.Text>
+                      <S.OptionCounter>
+                        <S.OptionButtonCounter
+                          disabled={options.adult <= 1}
+                          onClick={() => handleOption('adult', 'd')}
+                        >
+                          -
+                        </S.OptionButtonCounter>
+                        <S.OptionCounterNumber>
+                          {options.adult}
+                        </S.OptionCounterNumber>
+                        <S.OptionButtonCounter
+                          onClick={() => handleOption('adult', 'i')}
+                        >
+                          +
+                        </S.OptionButtonCounter>
+                      </S.OptionCounter>
+                    </S.OptionItem>
 
-              <S.OptionItem>
-                <S.Text>Children</S.Text>
-                <S.OptionButtonCounter>-</S.OptionButtonCounter>
-                <S.OptionCounterNumber>0</S.OptionCounterNumber>
-                <S.OptionButtonCounter>+</S.OptionButtonCounter>
-              </S.OptionItem>
+                    <S.OptionItem>
+                      <S.Text>Criança</S.Text>
+                      <S.OptionCounter>
+                        <S.OptionButtonCounter
+                          disabled={options.children <= 0}
+                          onClick={() => handleOption('children', 'd')}
+                        >
+                          -
+                        </S.OptionButtonCounter>
+                        <S.OptionCounterNumber>
+                          {options.children}
+                        </S.OptionCounterNumber>
+                        <S.OptionButtonCounter
+                          onClick={() => handleOption('children', 'i')}
+                        >
+                          +
+                        </S.OptionButtonCounter>
+                      </S.OptionCounter>
+                    </S.OptionItem>
 
-              <S.OptionItem>
-                <S.Text>Room</S.Text>
-                <S.OptionButtonCounter>-</S.OptionButtonCounter>
-                <S.OptionCounterNumber>1</S.OptionCounterNumber>
-                <S.OptionButtonCounter>+</S.OptionButtonCounter>
-              </S.OptionItem>
-            </S.Options>
-          </S.SearchItem>
+                    <S.OptionItem>
+                      <S.Text>Quarto</S.Text>
+                      <S.OptionCounter>
+                        <S.OptionButtonCounter
+                          disabled={options.room <= 1}
+                          onClick={() => handleOption('room', 'd')}
+                        >
+                          -
+                        </S.OptionButtonCounter>
+                        <S.OptionCounterNumber>
+                          {options.room}
+                        </S.OptionCounterNumber>
+                        <S.OptionButtonCounter
+                          onClick={() => handleOption('room', 'i')}
+                        >
+                          +
+                        </S.OptionButtonCounter>
+                      </S.OptionCounter>
+                    </S.OptionItem>
+                  </S.Options>
+                )}
+              </S.SearchItem>
 
-          <S.SearchItem>
-            <S.Button>Search</S.Button>
-          </S.SearchItem>
-        </S.HeaderSearch>
+              <S.SearchItem>
+                <S.Button>Pesquisar</S.Button>
+              </S.SearchItem>
+            </S.HeaderSearch>
+          </>
+        )}
       </S.HeaderContainer>
     </S.Header>
   )

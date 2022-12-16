@@ -6,7 +6,6 @@ export const DateCalendar = styled(DateRange)`
   position: absolute;
   top: 5rem;
 `
-
 export const Header = styled.header`
   ${({ theme }) => css`
     background-color: ${theme.colors.primary};
@@ -17,11 +16,10 @@ export const Header = styled.header`
     position: relative;
   `}
 `
-
 export const HeaderContainer = styled.div`
   width: 100%;
   max-width: 103rem;
-  margin: 20px 0px 100px 0px;
+  margin: 2rem 0 10rem 0;
 `
 
 export const ItemsContainer = styled.div`
@@ -34,6 +32,13 @@ export const Items = styled.div`
   display: flex;
   align-items: center;
   gap: 1rem;
+  cursor: pointer;
+
+  /* &.active {
+    border: 1px solid white;
+    padding: 1rem;
+    border-radius: 2rem;
+  } */
 `
 
 export const Title = styled.h1``
@@ -103,10 +108,38 @@ export const Options = styled.div`
   background-color: white;
   color: gray;
   border-radius: 0.5rem;
+  -webkit-box-shadow: 0px 0px 10px -5px rgba(0, 0, 0, 0.4);
+  box-shadow: 0px 0px 10px -5px rgba(0, 0, 0, 0.4);
 `
 
-export const OptionItem = styled.div``
+export const OptionItem = styled.div`
+  width: 20rem;
+  display: flex;
+  justify-content: space-between;
+  margin: 1rem;
+`
 
-export const OptionButtonCounter = styled.button``
+export const OptionCounter = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+`
 
-export const OptionCounterNumber = styled.button``
+export const OptionButtonCounter = styled.button`
+  ${({ theme }) => css`
+    width: 3rem;
+    height: 3rem;
+    border: 1px solid ${theme.colors.secondary};
+    cursor: pointer;
+    background-color: white;
+
+    :disabled {
+      border: 1px solid ${theme.colors.lightGray};
+    }
+  `}
+`
+
+export const OptionCounterNumber = styled.span`
+  font-size: 1.2rem;
+  color: black;
+`
