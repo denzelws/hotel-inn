@@ -16,11 +16,12 @@ import 'react-date-range/dist/styles.css'
 import 'react-date-range/dist/theme/default.css'
 import { format } from 'date-fns'
 
-interface HeaderProps {
-  type: string
+type HeaderProps = {
+  type?: string
+  list?: boolean
 }
 
-const Header = ({ type }: HeaderProps) => {
+const Header = ({ type, list }: HeaderProps) => {
   const [openDate, setOpenDate] = useState(false)
   const [date, setDate] = useState([
     {
@@ -48,7 +49,9 @@ const Header = ({ type }: HeaderProps) => {
 
   return (
     <S.Header>
-      <S.HeaderContainer>
+      <S.HeaderContainer
+        style={{ margin: list ? '2rem 0 0 0' : '2rem 0 10rem 0' }}
+      >
         <S.ItemsContainer>
           <S.Items>
             <FontAwesomeIcon icon={faBed} />

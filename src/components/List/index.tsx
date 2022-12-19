@@ -5,7 +5,7 @@ const List = () => {
   return (
     <div>
       <NavBar />
-      <Header type="list" />
+      <Header type="list" list />
     </div>
   )
 }
