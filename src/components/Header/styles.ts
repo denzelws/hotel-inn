@@ -5,6 +5,7 @@ import { DateRange } from 'react-date-range'
 export const DateCalendar = styled(DateRange)`
   position: absolute;
   top: 5rem;
+  z-index: 2;
 `
 export const Header = styled.header`
   ${({ theme }) => css`
@@ -110,6 +111,7 @@ export const Options = styled.div`
   border-radius: 0.5rem;
   -webkit-box-shadow: 0px 0px 10px -5px rgba(0, 0, 0, 0.4);
   box-shadow: 0px 0px 10px -5px rgba(0, 0, 0, 0.4);
+  z-index: 2;
 `
 
 export const OptionItem = styled.div`

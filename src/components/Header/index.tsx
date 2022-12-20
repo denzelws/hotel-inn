@@ -21,6 +21,12 @@ type HeaderProps = {
   list?: boolean
 }
 
+interface OptionProps {
+  adult: number
+  children: number
+  room: number
+}
+
 const Header = ({ type, list }: HeaderProps) => {
   const [openDate, setOpenDate] = useState(false)
   const [date, setDate] = useState([
@@ -32,14 +38,16 @@ const Header = ({ type, list }: HeaderProps) => {
   ])
 
   const [openOptions, setOpenOptions] = useState(false)
-  const [options, setOptions] = useState({
+
+  const [options, setOptions]: any = useState({
     adult: 1,
     children: 0,
     room: 1
   })
 
-  const handleOption = (name, operation) => {
-    setOptions((prev) => {
+  const handleOption = (name: string, operation: string) => {
+    console.log(name)
+    setOptions((prev: OptionProps) => {
       return {
         ...prev,
         [name]: operation === 'i' ? options[name] + 1 : options[name] - 1
