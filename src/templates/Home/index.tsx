@@ -2,7 +2,8 @@ import Header from '../../components/Header'
 import Highlight from '../../components/Highlight'
 import NavBar from '../../components/NavBar'
 
-import { Container } from '../../components/Highlight/styles'
+import { Container, PropertyTitle } from '../../components/Highlight/styles'
+import PropertyList from '../../components/PropertyList'
 
 const Home = () => {
   return (
@@ -11,6 +12,8 @@ const Home = () => {
       <Header />
       <Container>
         <Highlight />
+        <PropertyTitle>Pesquisar por tipo de alojamento</PropertyTitle>
+        <PropertyList />
       </Container>
     </div>
   )

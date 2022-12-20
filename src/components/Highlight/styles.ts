@@ -39,4 +39,9 @@ export const HighlightTitles = styled.div`
 
 export const Title = styled.h1``
 
+export const PropertyTitle = styled(Title)`
+  width: 103rem;
+  font-size: 2rem;
+`
+
 export const Description = styled.h2``
