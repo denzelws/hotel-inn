@@ -6,6 +6,7 @@ import { Container, PropertyTitle } from '../../components/Highlight/styles'
 import PropertyList from '../../components/PropertyList'
 import PropertyPlace from '../../components/PropertyPlace'
 import MailContact from '../../components/MailContact'
+import Footer from '../../components/Footer'
 
 const Home = () => {
   return (
@@ -21,6 +22,7 @@ const Home = () => {
         </PropertyTitle>
         <PropertyPlace />
         <MailContact />
+        <Footer />
       </Container>
     </div>
   )
