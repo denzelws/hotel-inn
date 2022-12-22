@@ -15,6 +15,7 @@ import * as S from './styles'
 import 'react-date-range/dist/styles.css'
 import 'react-date-range/dist/theme/default.css'
 import { format } from 'date-fns'
+import { useNavigate } from 'react-router-dom'
 
 type HeaderProps = {
   type?: string
@@ -28,6 +29,7 @@ interface OptionProps {
 }
 
 const Header = ({ type, list }: HeaderProps) => {
+  const [destination, setDestination] = useState('')
   const [openDate, setOpenDate] = useState(false)
   const [date, setDate] = useState([
     {
@@ -37,6 +39,8 @@ const Header = ({ type, list }: HeaderProps) => {
     }
   ])
 
+  const navigate = useNavigate()
+
   const [openOptions, setOpenOptions] = useState(false)
 
   const [options, setOptions]: any = useState({
@@ -44,6 +48,10 @@ const Header = ({ type, list }: HeaderProps) => {
     children: 0,
     room: 1
   })
+
+  const handleSearch = () => {
+    navigate('/hotels', { state: { destination, date, options } })
+  }
 
   const handleOption = (name: string, operation: string) => {
     console.log(name)
@@ -97,7 +105,11 @@ const Header = ({ type, list }: HeaderProps) => {
             <S.HeaderSearch>
               <S.SearchItem>
                 <FontAwesomeIcon icon={faBed} />
-                <S.Input type="text" placeholder="Para onde está indo?" />
+                <S.Input
+                  type="text"
+                  placeholder="Para onde está indo?"
+                  onChange={(e) => setDestination(e.target.value)}
+                />
               </S.SearchItem>
 
               <S.SearchItem>
@@ -109,7 +121,8 @@ const Header = ({ type, list }: HeaderProps) => {
                 {openDate && (
                   <S.DateCalendar
                     editableDateInputs={true}
-                    onChange={(item) => setDate([item.selection])}
+                    minDate={new Date()}
+                    onChange={(item: any) => setDate([item.selection])}
                     moveRangeOnFirstSelection={false}
                     ranges={date}
                   />
@@ -190,7 +203,7 @@ const Header = ({ type, list }: HeaderProps) => {
               </S.SearchItem>
 
               <S.SearchItem>
-                <S.Button>Pesquisar</S.Button>
+                <S.Button onClick={handleSearch}>Pesquisar</S.Button>
               </S.SearchItem>
             </S.HeaderSearch>
           </>
