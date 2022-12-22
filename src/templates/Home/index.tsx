@@ -5,6 +5,7 @@ import NavBar from '../../components/NavBar'
 import { Container, PropertyTitle } from '../../components/Highlight/styles'
 import PropertyList from '../../components/PropertyList'
 import PropertyPlace from '../../components/PropertyPlace'
+import MailContact from '../../components/MailContact'
 
 const Home = () => {
   return (
@@ -19,6 +20,7 @@ const Home = () => {
           Casas e apartamentos que os hóspedes adoram
         </PropertyTitle>
         <PropertyPlace />
+        <MailContact />
       </Container>
     </div>
   )
