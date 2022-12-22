@@ -10,7 +10,7 @@ const PropertyList = () => {
         />
         <S.PropertyDescription>
           <S.Title>Hotéis</S.Title>
-          <S.Description>900</S.Description>
+          <S.Description>900 Hotéis</S.Description>
         </S.PropertyDescription>
       </S.PropertyItem>
 
@@ -21,7 +21,7 @@ const PropertyList = () => {
         />
         <S.PropertyDescription>
           <S.Title>Apartamentos</S.Title>
-          <S.Description>900</S.Description>
+          <S.Description>900 Apartamentos</S.Description>
         </S.PropertyDescription>
       </S.PropertyItem>
 
@@ -32,7 +32,7 @@ const PropertyList = () => {
         />
         <S.PropertyDescription>
           <S.Title>Resorts</S.Title>
-          <S.Description>900</S.Description>
+          <S.Description>900 Resorts</S.Description>
         </S.PropertyDescription>
       </S.PropertyItem>
 
@@ -43,7 +43,7 @@ const PropertyList = () => {
         />
         <S.PropertyDescription>
           <S.Title>Villas</S.Title>
-          <S.Description>900</S.Description>
+          <S.Description>900 Villas</S.Description>
         </S.PropertyDescription>
       </S.PropertyItem>
 
@@ -54,7 +54,7 @@ const PropertyList = () => {
         />
         <S.PropertyDescription>
           <S.Title>Chalés</S.Title>
-          <S.Description>900</S.Description>
+          <S.Description>900 Chalés</S.Description>
         </S.PropertyDescription>
       </S.PropertyItem>
 
@@ -65,7 +65,7 @@ const PropertyList = () => {
         />
         <S.PropertyDescription>
           <S.Title>Casas de férias</S.Title>
-          <S.Description>900</S.Description>
+          <S.Description>900 Casas de férias</S.Description>
         </S.PropertyDescription>
       </S.PropertyItem>
     </S.Property>

@@ -9,18 +9,16 @@ export const Property = styled.div`
 `
 
 export const PropertyItem = styled.div`
-  ${({ theme }) => css`
-    flex: 1;
-    border-radius: 1rem;
-    overflow: hidden;
-    cursor: pointer;
+  flex: 1;
+  border-radius: 1rem;
+  overflow: hidden;
+  cursor: pointer;
 
-    > img {
-      width: 100%;
-      height: 13rem;
-      object-fit: cover;
-    }
-  `}
+  > img {
+    width: 100%;
+    height: 13rem;
+    object-fit: cover;
+  }
 `
 
 export const PropertyDescription = styled.div``
@@ -32,7 +30,7 @@ export const Title = styled.h1`
 export const Description = styled.h2`
   ${({ theme }) => css`
     color: ${theme.colors.gray};
-    font-size: ${theme.font.sizes.large};
+    font-size: ${theme.font.sizes.small};
     font-weight: 300;
   `}
 `

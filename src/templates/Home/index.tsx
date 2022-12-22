@@ -4,6 +4,7 @@ import NavBar from '../../components/NavBar'
 
 import { Container, PropertyTitle } from '../../components/Highlight/styles'
 import PropertyList from '../../components/PropertyList'
+import PropertyPlace from '../../components/PropertyPlace'
 
 const Home = () => {
   return (
@@ -14,6 +15,10 @@ const Home = () => {
         <Highlight />
         <PropertyTitle>Pesquisar por tipo de alojamento</PropertyTitle>
         <PropertyList />
+        <PropertyTitle>
+          Casas e apartamentos que os hóspedes adoram
+        </PropertyTitle>
+        <PropertyPlace />
       </Container>
     </div>
   )
