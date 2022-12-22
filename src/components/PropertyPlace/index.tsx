@@ -5,38 +5,58 @@ const PropertyPlace = () => {
     <S.PropertyPlace>
       <S.PropertyPlaceItem>
         <img
-          src="https://cf.bstatic.com/xdata/images/hotel/square600/121399207.webp?k=b0e7119a0ba3354de23997d3698aac0296822fd58a590d83ddbb372f8af887a9&o=&s=1"
+          src="https://cf.bstatic.com/xdata/images/hotel/square600/87428762.webp?k=9a065fcd92168145d8c8358701662c76793535597b678efc8f6921c8e3c188e6&o=&s=1"
           alt=""
         />
-        <S.Title>Dublin</S.Title>
+        <S.Title>Sugar Loft Apartments</S.Title>
+        <S.City>Dublin</S.City>
         <S.PriceDescription>A partir de R$500,00</S.PriceDescription>
+        <S.PriceBox>
+          <S.Rating>8.9</S.Rating>
+          <S.RatingLevel>Excelent</S.RatingLevel>
+        </S.PriceBox>
       </S.PropertyPlaceItem>
 
       <S.PropertyPlaceItem>
         <img
-          src="https://cf.bstatic.com/xdata/images/hotel/square600/121399207.webp?k=b0e7119a0ba3354de23997d3698aac0296822fd58a590d83ddbb372f8af887a9&o=&s=1"
+          src="https://cf.bstatic.com/xdata/images/hotel/square600/87428762.webp?k=9a065fcd92168145d8c8358701662c76793535597b678efc8f6921c8e3c188e6&o=&s=1"
           alt=""
         />
-        <S.Title>Dublin</S.Title>
+        <S.Title>Sugar Loft Apartments</S.Title>
+        <S.City>Dublin</S.City>
         <S.PriceDescription>A partir de R$500,00</S.PriceDescription>
+        <S.PriceBox>
+          <S.Rating>8.9</S.Rating>
+          <S.RatingLevel>Excelent</S.RatingLevel>
+        </S.PriceBox>
       </S.PropertyPlaceItem>
 
       <S.PropertyPlaceItem>
         <img
-          src="https://cf.bstatic.com/xdata/images/hotel/square600/121399207.webp?k=b0e7119a0ba3354de23997d3698aac0296822fd58a590d83ddbb372f8af887a9&o=&s=1"
+          src="https://cf.bstatic.com/xdata/images/hotel/square600/87428762.webp?k=9a065fcd92168145d8c8358701662c76793535597b678efc8f6921c8e3c188e6&o=&s=1"
           alt=""
         />
-        <S.Title>Dublin</S.Title>
+        <S.Title>Sugar Loft Apartments</S.Title>
+        <S.City>Dublin</S.City>
         <S.PriceDescription>A partir de R$500,00</S.PriceDescription>
+        <S.PriceBox>
+          <S.Rating>8.9</S.Rating>
+          <S.RatingLevel>Excelent</S.RatingLevel>
+        </S.PriceBox>
       </S.PropertyPlaceItem>
 
       <S.PropertyPlaceItem>
         <img
-          src="https://cf.bstatic.com/xdata/images/hotel/square600/121399207.webp?k=b0e7119a0ba3354de23997d3698aac0296822fd58a590d83ddbb372f8af887a9&o=&s=1"
+          src="https://cf.bstatic.com/xdata/images/hotel/square600/87428762.webp?k=9a065fcd92168145d8c8358701662c76793535597b678efc8f6921c8e3c188e6&o=&s=1"
           alt=""
         />
-        <S.Title>Dublin</S.Title>
+        <S.Title>Sugar Loft Apartments</S.Title>
+        <S.City>Dublin</S.City>
         <S.PriceDescription>A partir de R$500,00</S.PriceDescription>
+        <S.PriceBox>
+          <S.Rating>8.9</S.Rating>
+          <S.RatingLevel>Excelent</S.RatingLevel>
+        </S.PriceBox>
       </S.PropertyPlaceItem>
     </S.PropertyPlace>
   )
