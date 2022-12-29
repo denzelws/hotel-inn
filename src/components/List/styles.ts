@@ -21,6 +21,16 @@ export const ListSearch = styled.div`
     border-radius: 1rem;
     position: sticky;
     top: 1rem;
+
+    > button {
+      padding: 1rem;
+      background-color: ${theme.colors.secondary};
+      color: white;
+      border: none;
+      cursor: pointer;
+      width: 100%;
+      font-weight: ${theme.font.elevated};
+    }
   `}
 `
 
@@ -66,6 +76,21 @@ export const Input = styled.input`
   padding: 0.5rem;
 `
 
-export const OptionItem = styled.div``
+export const OptionItem = styled.div`
+  ${({ theme }) => css`
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+    font-size: ${theme.font.sizes.xsmall};
+    color: ${theme.colors.darkGray};
 
-export const OptionText = styled.span``
+    > input {
+      width: 5rem;
+    }
+  `}
+`
+
+export const OptionText = styled.span`
+  margin-top: 1rem;
+`
+export const Button = styled.button``

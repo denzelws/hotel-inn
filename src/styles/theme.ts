@@ -5,6 +5,7 @@ export default {
     light: 300,
     normal: 400,
     higher: 500,
+    elevated: 700,
     sizes: {
       xsmall: '1.2rem',
       small: '1.4rem',

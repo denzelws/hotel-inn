@@ -62,19 +62,20 @@ const List = () => {
 
               <S.OptionItem>
                 <S.OptionText>Adulto</S.OptionText>
-                <input type="text" />
+                <input type="number" min={1} placeholder={options.adult} />
               </S.OptionItem>
 
               <S.OptionItem>
                 <S.OptionText>Criança</S.OptionText>
-                <input type="text" />
+                <input type="number" min={0} placeholder={options.children} />
               </S.OptionItem>
 
               <S.OptionItem>
                 <S.OptionText>Quarto</S.OptionText>
-                <input type="text" />
+                <input type="number" min={1} placeholder={options.room} />
               </S.OptionItem>
             </S.ListSearchItem>
+            <button>Pesquisar</button>
           </S.ListSearch>
           <S.ListResult></S.ListResult>
         </S.Wrapper>
