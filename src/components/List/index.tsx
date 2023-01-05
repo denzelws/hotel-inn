@@ -5,6 +5,7 @@ import { useLocation } from 'react-router-dom'
 import Header from '../Header'
 
 import NavBar from '../NavBar'
+import SearchList from '../SearchList'
 
 import * as S from './styles'
 
@@ -77,7 +78,18 @@ const List = () => {
             </S.ListSearchItem>
             <button>Pesquisar</button>
           </S.ListSearch>
-          <S.ListResult></S.ListResult>
+          <S.ListResult>
+            <SearchList />
+            <SearchList />
+            <SearchList />
+            <SearchList />
+            <SearchList />
+            <SearchList />
+            <SearchList />
+            <SearchList />
+            <SearchList />
+            <SearchList />
+          </S.ListResult>
         </S.Wrapper>
       </S.Container>
     </div>
