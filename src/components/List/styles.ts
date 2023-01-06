@@ -21,6 +21,7 @@ export const ListSearch = styled.div`
     border-radius: 1rem;
     position: sticky;
     top: 1rem;
+    height: max-content;
 
     > button {
       padding: 1rem;

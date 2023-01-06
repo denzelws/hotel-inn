@@ -28,15 +28,16 @@ const SearchList = () => {
         </S.Features>
         <S.CancelOption>Cancelamento grátis</S.CancelOption>
       </S.DescriptionBox>
+
       <S.DetailsBox>
         <S.RatingBox>
           <S.Rating>Excelente</S.Rating>
-          <button>8.9</button>
+          <S.RatingNumber>8.9</S.RatingNumber>
         </S.RatingBox>
 
         <S.DetailsText>
           <S.Price>$123</S.Price>
-          <S.TaxOp>Inclui taxas e fees</S.TaxOp>
+          <S.TaxOp>Inclui impostos e taxas</S.TaxOp>
           <S.CheckButton>Ver disponibilidade</S.CheckButton>
         </S.DetailsText>
       </S.DetailsBox>

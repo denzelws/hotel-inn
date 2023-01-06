@@ -50,6 +50,9 @@ export const TaxiOption = styled.span`
 
 export const DetailsBox = styled.div`
   flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 `
 
 export const Subtitle = styled.span`
@@ -73,16 +76,65 @@ export const CancelOption = styled.span`
   `}
 `
 
-export const RatingBox = styled.div``
+export const RatingBox = styled.div`
+  display: flex;
+  justify-content: space-between;
+
+  > span {
+    ${({ theme }) => css`
+      font-weight: ${theme.font.higher};
+    `}
+  }
+`
 
 export const Rating = styled.span``
 
-export const DetailsText = styled.div``
+export const RatingNumber = styled.button`
+  ${({ theme }) => css`
+    background-color: ${theme.colors.primary};
+    font-size: ${theme.font.sizes.small};
+    color: ${theme.colors.white};
+    padding: 0.5rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 0.5rem 0.5rem 0.5rem 0;
+  `}
+`
 
-export const Price = styled.span``
+export const DetailsText = styled.div`
+  text-align: right;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+`
 
-export const TaxOp = styled.span``
+export const Price = styled.span`
+  font-size: 2.4rem;
+`
+
+export const TaxOp = styled.span`
+  ${({ theme }) => css`
+    font-size: ${theme.font.sizes.xsmall};
+    color: ${theme.colors.gray};
+  `}
+`
 
 export const Check = styled.span``
 
-export const CheckButton = styled.button``
+export const CheckButton = styled.button`
+  ${({ theme }) => css`
+    width: 100%;
+    height: 3.4rem;
+    cursor: pointer;
+    background-color: ${theme.colors.secondary};
+    color: ${theme.colors.white};
+    font-size: ${theme.font.sizes.small};
+    border: none;
+    border-radius: 0.5rem;
+
+    :hover {
+      background-color: ${theme.colors.primary};
+      transition: 0.5s;
+    }
+  `}
+`
