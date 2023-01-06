@@ -30,14 +30,59 @@ export const Title = styled.h1`
   `}
 `
 
-export const Distance = styled.span``
+export const Distance = styled.span`
+  ${({ theme }) => css`
+    font-size: ${theme.font.sizes.xsmall};
+    color: ${theme.colors.darkGray};
+  `}
+`
 
-export const TaxiOption = styled.span``
+export const TaxiOption = styled.span`
+  ${({ theme }) => css`
+    font-size: ${theme.font.sizes.small};
+    background-color: ${theme.colors.green};
+    padding: 0.3rem;
+    border-radius: 0.5rem;
+    color: white;
+    width: max-content;
+  `}
+`
 
 export const DetailsBox = styled.div`
   flex: 1;
 `
 
-export const Subtitle = styled.span``
+export const Subtitle = styled.span`
+  ${({ theme }) => css`
+    font-size: ${theme.font.sizes.xsmall};
+    font-weight: bold;
+  `}
+`
 
-export const Features = styled.span``
+export const Features = styled.span`
+  ${({ theme }) => css`
+    font-size: ${theme.font.sizes.xsmall};
+  `}
+`
+
+export const CancelOption = styled.span`
+  ${({ theme }) => css`
+    font-size: ${theme.font.sizes.xsmall};
+    color: ${theme.colors.green};
+    font-weight: bold;
+  `}
+`
+
+export const RatingBox = styled.div``
+
+export const Rating = styled.span``
+
+export const DetailsText = styled.div``
+
+export const Price = styled.span``
+
+export const TaxOp = styled.span``
+
+export const Check = styled.span``
+
+export const CheckButton = styled.button``

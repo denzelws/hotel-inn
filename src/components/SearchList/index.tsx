@@ -22,10 +22,24 @@ const SearchList = () => {
         <S.Title>Orlanova Hotel</S.Title>
         <S.Distance>400 m da praia</S.Distance>
         <S.TaxiOption>Taxi grátis</S.TaxiOption>
-        <S.Subtitle>Taxi grátis</S.Subtitle>
-        <S.Features>Taxi grátis</S.Features>
+        <S.Subtitle>Studio Apartment com ar condicionado</S.Subtitle>
+        <S.Features>
+          Quarto Standard • 1 banheiro • 21m² 2 camas solteiro
+        </S.Features>
+        <S.CancelOption>Cancelamento grátis</S.CancelOption>
       </S.DescriptionBox>
-      <S.DetailsBox>details</S.DetailsBox>
+      <S.DetailsBox>
+        <S.RatingBox>
+          <S.Rating>Excelente</S.Rating>
+          <button>8.9</button>
+        </S.RatingBox>
+
+        <S.DetailsText>
+          <S.Price>$123</S.Price>
+          <S.TaxOp>Inclui taxas e fees</S.TaxOp>
+          <S.CheckButton>Ver disponibilidade</S.CheckButton>
+        </S.DetailsText>
+      </S.DetailsBox>
     </S.SearchList>
   )
 }
