@@ -7,6 +7,7 @@ import { LocationDot as LocationIcon } from '@styled-icons/fa-solid/LocationDot'
 import { CheckButton } from '../SearchList/styles'
 import MailContact from '../MailContact'
 import Footer from '../Footer'
+import { useState } from 'react'
 
 const photos = [
   {
@@ -30,10 +31,40 @@ const photos = [
 ]
 
 const Hotel = () => {
+  const [slideNumber, setSlideNumber] = useState(0)
+  const [open, setOpen] = useState(false)
+
+  const handleOpen = (index: number) => {
+    setSlideNumber(index)
+    setOpen(true)
+  }
+
+  const handleMove = (direction: string) => {
+    let newSlideNumber
+
+    if (direction === 'l') {
+      newSlideNumber = slideNumber === 0 ? 5 : slideNumber - 1
+    } else {
+      newSlideNumber = slideNumber === 5 ? 0 : slideNumber + 1
+    }
+
+    setSlideNumber(newSlideNumber)
+  }
+
   return (
     <S.Wrapper>
       <NavBar />
       <Header type="list" list />
+      {open && (
+        <S.Slider>
+          <S.CircleFill onClick={() => setOpen(false)} />
+          <S.LeftArrow onClick={() => handleMove('l')} />
+          <S.SliderWrapper>
+            <img src={photos[slideNumber].src} alt="" />
+          </S.SliderWrapper>
+          <S.RightArrow onClick={() => handleMove('r')} />
+        </S.Slider>
+      )}
       <S.Container>
         <S.HotelWrapper>
           <S.Title>Hotel Grand</S.Title>
@@ -53,7 +84,7 @@ const Hotel = () => {
           <S.HotelImages>
             {photos.map((photo, index) => (
               <S.ImgWrapper key={index}>
-                <img src={photo.src} alt="" />
+                <img onClick={() => handleOpen(index)} src={photo.src} alt="" />
               </S.ImgWrapper>
             ))}
           </S.HotelImages>

@@ -1,12 +1,70 @@
 import styled, { css } from 'styled-components'
 
-export const Wrapper = styled.div``
+import { XCircleFill } from '@styled-icons/bootstrap'
+import {
+  LeftArrowCircle,
+  RightArrowCircle
+} from '@styled-icons/boxicons-regular'
+
+export const CircleFill = styled(XCircleFill)`
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  width: 3rem;
+  color: lightgray;
+  cursor: pointer;
+`
+
+export const LeftArrow = styled(LeftArrowCircle)`
+  width: 5rem;
+  cursor: pointer;
+  margin: 2rem;
+  color: lightgray;
+`
+
+export const RightArrow = styled(RightArrowCircle)`
+  width: 5rem;
+  cursor: pointer;
+  margin: 2rem;
+  color: lightgray;
+`
+
+export const Wrapper = styled.div`
+  z-index: 1;
+`
 
 export const Container = styled.div`
-  margin-top: 2rem;
+  ${({ theme }) => css`
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  `}
+`
+
+export const Slider = styled.div`
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 98.7vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.426);
+  z-index: 2;
   display: flex;
-  flex-direction: column;
   align-items: center;
+`
+
+export const SliderWrapper = styled.div`
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  > img {
+    width: 80%;
+    height: 80vh;
+  }
 `
 
 export const HotelWrapper = styled.div`
