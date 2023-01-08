@@ -3,7 +3,10 @@ import NavBar from '../NavBar'
 import * as S from './styles'
 
 import { LocationDot as LocationIcon } from '@styled-icons/fa-solid/LocationDot'
+
 import { CheckButton } from '../SearchList/styles'
+import MailContact from '../MailContact'
+import Footer from '../Footer'
 
 const photos = [
   {
@@ -96,6 +99,8 @@ const Hotel = () => {
             </S.HotelDetailsPrice>
           </S.HotelDetails>
         </S.HotelWrapper>
+        <MailContact />
+        <Footer />
       </S.Container>
     </S.Wrapper>
   )

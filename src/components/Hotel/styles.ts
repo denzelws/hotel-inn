@@ -5,7 +5,8 @@ export const Wrapper = styled.div``
 export const Container = styled.div`
   margin-top: 2rem;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
 `
 
 export const HotelWrapper = styled.div`
@@ -78,16 +79,44 @@ export const HotelDetailsTexts = styled.div`
 
 export const HotelDetailsPrice = styled.div`
   flex: 1;
+  background-color: #ebf3ff;
+  display: flex;
+  padding: 2rem;
+  flex-direction: column;
+  gap: 2rem;
 `
 
-export const PriceTitle = styled.h3``
+export const HotelTitle = styled.h1`
+  ${({ theme }) => css`
+    font-size: ${theme.font.sizes.xlarge};
+  `}
+`
 
-export const HotelTitle = styled.h1``
+export const HotelDesc = styled.p`
+  ${({ theme }) => css`
+    font-size: ${theme.font.sizes.small};
+    margin-top: 2rem;
+  `}
+`
 
-export const PriceDescription = styled.span``
+export const PriceTitle = styled.h3`
+  ${({ theme }) => css`
+    font-size: ${theme.font.sizes.medium};
+    color: ${theme.colors.darkGray};
+  `}
+`
 
-export const Price = styled.span``
+export const PriceDescription = styled.span`
+  ${({ theme }) => css`
+    font-size: ${theme.font.sizes.small};
+  `}
+`
+
+export const Price = styled.span`
+  ${({ theme }) => css`
+    font-weight: ${theme.font.elevated};
+    font-size: ${theme.font.sizes.xlarge};
+  `}
+`
 
 export const PriceHotelDetails = styled.span``
-
-export const HotelDesc = styled.p``
